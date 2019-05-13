@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<data>
+    <!-- agregar cuit y tipo al encabezado -->
+    <xpath expr="/form/group[@id='checkboxes']" position="after">
+        <field name="client_number" invisible="1"/>
+    </xpath>
+</data>

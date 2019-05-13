@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- This file is part of cultura_account_invoice.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<data>
+    <xpath
+        expr="/form/field[@name='party_sequence']"
+        position="after">
+          <label name="client_num_sequence"/>
+          <field name="client_num_sequence"/>
+    </xpath>
+</data>
