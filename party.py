@@ -25,6 +25,16 @@ class Party(metaclass=PoolMeta):
             if identifier.type == 'client_number':
                 return identifier.code
 
+    def get_full_name(self, name):
+        full_name = self.name
+
+        if self.client_number:
+            full_name = "[%s] %s" % (self.client_number, self.name)
+        else:
+            full_name = self.name
+
+        return full_name
+
     @classmethod
     def set_client_number(cls, partys, name, value):
         party_id = partys[0].id
