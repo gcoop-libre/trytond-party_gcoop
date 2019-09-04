@@ -1,13 +1,9 @@
-# -*- coding: utf-8 -*-
-# This file is part of Tryton.  The COPYRIGHT file at the top level of
-# this repository contains the full copyright notices and license terms.
+# The COPYRIGHT file at the top level of this repository contains
+# the full copyright notices and license terms.
 
-from sql import Table
 from trytond.pool import Pool, PoolMeta
-from trytond.model import fields, ModelSQL, ModelView
+from trytond.model import fields
 from trytond.pyson import Eval, Equal
-from trytond.transaction import Transaction
-from trytond import backend
 
 __all__ = ['Party', 'PartyIdentifier']
 
