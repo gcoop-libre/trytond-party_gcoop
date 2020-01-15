@@ -16,8 +16,10 @@ this repository contains the full copyright notices and license terms. -->
       </record>
       <record model="ir.sequence" id="sequence_client_num">
           <field name="name">Client Number</field>
-          <field name="prefix">CL#</field>
+          <field name="prefix"></field>
+          <!--
           <field name="padding">6</field>
+          -->
           <field name="code">party.client_num</field>
       </record>
       <record model="ir.sequence.type-res.group"
