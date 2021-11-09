@@ -23,7 +23,7 @@ class Configuration(metaclass=PoolMeta):
         pool = Pool()
         if field == 'client_num_sequence':
             return pool.get('party.configuration.party_sequence')
-        return super(Configuration, cls).multivalue_model(field)
+        return super().multivalue_model(field)
 
     @classmethod
     def default_client_num_sequence(cls, **pattern):

@@ -57,7 +57,7 @@ class Party(metaclass=PoolMeta):
 
     @classmethod
     def search_rec_name(cls, name, clause):
-        domain = super(Party, cls).search_rec_name(name, clause),
+        domain = super().search_rec_name(name, clause),
         return ['OR',
                 domain,
                 ('identifiers.code',) + tuple(clause[1:]),
@@ -83,7 +83,7 @@ class PartyIdentifier(metaclass=PoolMeta):
 
     @classmethod
     def __setup__(cls):
-        super(PartyIdentifier, cls).__setup__()
+        super().__setup__()
         cls.code.states['readonly'] = Equal(Eval('type'), 'client_number')
         for new_type in [
                 ('client_number', 'Client Number'),
@@ -105,4 +105,4 @@ class PartyIdentifier(metaclass=PoolMeta):
                     config = Configuration(1)
                     if config.client_num_sequence:
                         values['code'] = Sequence.get_id(config.client_num_sequence.id)
-        return super(PartyIdentifier, cls).create(vlist)
+        return super().create(vlist)
