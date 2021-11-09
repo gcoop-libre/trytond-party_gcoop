@@ -3,8 +3,6 @@
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 
-__all__ = ['Configuration', 'ConfigurationSequence']
-
 client_num_sequence = fields.Many2One('ir.sequence', 'ClientNum Sequence',
     domain=[
         ('code', '=', 'party.client_num'),

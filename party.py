@@ -5,8 +5,6 @@ from trytond.pool import Pool, PoolMeta
 from trytond.model import fields
 from trytond.pyson import Eval, Equal
 
-__all__ = ['Party', 'PartyIdentifier']
-
 
 class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
