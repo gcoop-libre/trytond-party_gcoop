@@ -91,16 +91,14 @@ class PartyIdentifier(metaclass=PoolMeta):
 
     @classmethod
     def create(cls, vlist):
-        Sequence = Pool().get('ir.sequence')
         Configuration = Pool().get('party.configuration')
 
         vlist = [x.copy() for x in vlist]
+        config = Configuration(1)
         for values in vlist:
             type = values.get('type')
             if type == 'client_number':
                 code = values.get('code')
-                if code is None:
-                    config = Configuration(1)
-                    if config.client_num_sequence:
-                        values['code'] = Sequence.get_id(config.client_num_sequence.id)
+                if code is None and config.client_num_sequence:
+                    values['code'] = config.client_num_sequence.get()
         return super().create(vlist)

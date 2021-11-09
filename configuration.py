@@ -2,10 +2,12 @@
 # the full copyright notices and license terms.
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
+from trytond.pyson import Id
 
 client_num_sequence = fields.Many2One('ir.sequence', 'ClientNum Sequence',
     domain=[
-        ('code', '=', 'party.client_num'),
+        ('sequence_type', '=',
+            Id('party_gcoop', 'sequence_type_party_client_num')),
         ],
     help="Used to generate the client number sequence.")
 

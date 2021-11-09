@@ -12,15 +12,11 @@ this repository contains the full copyright notices and license terms. -->
 
       <record model="ir.sequence.type" id="sequence_type_party_client_num">
           <field name="name">Client Number</field>
-          <field name="code">party.client_num</field>
       </record>
       <record model="ir.sequence" id="sequence_client_num">
           <field name="name">Client Number</field>
+          <field name="sequence_type" ref="sequence_type_party_client_num"/>
           <field name="prefix"></field>
-          <!--
-          <field name="padding">6</field>
-          -->
-          <field name="code">party.client_num</field>
       </record>
       <record model="ir.sequence.type-res.group"
           id="sequence_type_party_client_num_group_admin">
