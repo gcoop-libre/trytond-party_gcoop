@@ -1,0 +1,31 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:party.configuration,client_num_sequence:"
+msgid "Client Num Sequence"
+msgstr "Secuencia número cliente"
+
+msgctxt "field:party.configuration.party_sequence,client_num_sequence:"
+msgid "Client Num Sequence"
+msgstr "Secuencia número cliente"
+
+msgctxt "field:party.party,client_number:"
+msgid "Client Number"
+msgstr "Número cliente"
+
+msgctxt "help:party.configuration,client_num_sequence:"
+msgid "Used to generate the client number sequence."
+msgstr "Utilizada para generar la secuencia de números de cliente."
+
+msgctxt "help:party.configuration.party_sequence,client_num_sequence:"
+msgid "Used to generate the client number sequence."
+msgstr "Utilizada para generar la secuencia de números de cliente."
+
+msgctxt "model:ir.sequence,name:sequence_client_num"
+msgid "Client Number"
+msgstr "Número cliente"
+
+msgctxt "model:ir.sequence.type,name:sequence_type_party_client_num"
+msgid "Client Number"
+msgstr "Número cliente"
