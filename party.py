@@ -38,11 +38,15 @@ class Party(metaclass=PoolMeta):
             ('party', 'in', partys),
             ('type', '=', 'client_number'),
             ])
-        if identifiers == []:
-            PartyIdentifier.create([{
-                'type': 'client_number',
-                'party': party_id,
-                }])
+        PartyIdentifier.delete(identifiers)
+        if not value:
+            return
+
+        PartyIdentifier.create([{
+            'code': value,
+            'type': 'client_number',
+            'party': party_id,
+            }])
 
     def get_rec_name(self, name):
         codes = []
@@ -83,11 +87,11 @@ class PartyIdentifier(metaclass=PoolMeta):
     def __setup__(cls):
         super().__setup__()
         cls.code.states['readonly'] = Equal(Eval('type'), 'client_number')
-        for new_type in [
-                ('client_number', 'Client Number'),
-                ]:
-            if new_type not in cls.type.selection:
-                cls.type.selection.append(new_type)
+
+    @classmethod
+    def get_types(cls):
+        types = super().get_types()
+        return types + [('client_number', 'Client Number')]
 
     @classmethod
     def create(cls, vlist):
