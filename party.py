@@ -1,18 +1,17 @@
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
 
-from trytond.pool import Pool, PoolMeta
 from trytond.model import fields
+from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Equal
 
 
 class Party(metaclass=PoolMeta):
     __name__ = 'party.party'
 
-    client_number = fields.Function(
-        fields.Char('Client Number', states={
-            'readonly': True,
-        }), 'get_client_number', setter='set_client_number')
+    client_number = fields.Function(fields.Char('Client Number',
+        states={'readonly': True}),
+        'get_client_number', setter='set_client_number')
 
     def get_client_number(self, name):
         for identifier in self.identifiers:
@@ -21,19 +20,16 @@ class Party(metaclass=PoolMeta):
 
     def get_full_name(self, name):
         full_name = self.name
-
         if self.client_number:
             full_name = "[%s] %s" % (self.client_number, self.name)
         else:
             full_name = self.name
-
         return full_name
 
     @classmethod
     def set_client_number(cls, partys, name, value):
         party_id = partys[0].id
         PartyIdentifier = Pool().get('party.identifier')
-
         identifiers = PartyIdentifier.search([
             ('party', 'in', partys),
             ('type', '=', 'client_number'),

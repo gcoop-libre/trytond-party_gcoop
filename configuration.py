@@ -1,10 +1,11 @@
 # The COPYRIGHT file at the top level of this repository contains
 # the full copyright notices and license terms.
+
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Id
 
-client_num_sequence = fields.Many2One('ir.sequence', 'ClientNum Sequence',
+client_num_sequence = fields.Many2One('ir.sequence', 'Client Num Sequence',
     domain=[
         ('sequence_type', '=',
             Id('party_gcoop', 'sequence_type_party_client_num')),
@@ -33,6 +34,7 @@ class Configuration(metaclass=PoolMeta):
 
 class ConfigurationSequence(metaclass=PoolMeta):
     __name__ = 'party.configuration.party_sequence'
+
     client_num_sequence = client_num_sequence
 
     @classmethod
