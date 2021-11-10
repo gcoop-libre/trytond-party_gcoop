@@ -1,14 +1,8 @@
 <?xml version="1.0"?>
-<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
-this repository contains the full copyright notices and license terms. -->
 <tryton>
     <data>
 
-      <record model="ir.ui.view" id="party_view_form">
-        <field name="model">party.party</field>
-        <field name="inherit" ref="party.party_view_form"/>
-        <field name="name">party_form</field>
-      </record>
+<!-- Client Number Sequence -->
 
       <record model="ir.sequence.type" id="sequence_type_party_client_num">
           <field name="name">Client Number</field>
@@ -22,6 +16,14 @@ this repository contains the full copyright notices and license terms. -->
           id="sequence_type_party_client_num_group_admin">
           <field name="sequence_type" ref="sequence_type_party_client_num"/>
           <field name="group" ref="res.group_admin"/>
+      </record>
+
+<!-- Party -->
+
+      <record model="ir.ui.view" id="party_view_form">
+        <field name="model">party.party</field>
+        <field name="inherit" ref="party.party_view_form"/>
+        <field name="name">party_form</field>
       </record>
 
   </data>
