@@ -13,6 +13,7 @@ def register():
         party.PartyIdentifier,
         account.AccountTemplate,
         account.Account,
+        account.MoveLine,
         configuration.Configuration,
         configuration.ConfigurationSequence,
         module='party_gcoop', type_='model')
