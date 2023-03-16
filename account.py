@@ -27,3 +27,12 @@ class Account(metaclass=PoolMeta):
             If(~Eval('type'), ('party_required', '=', False), ()),
             ]
         cls.party_required.states['invisible'] = ~Eval('type')
+
+
+class MoveLine(metaclass=PoolMeta):
+    __name__ = 'account.move.line'
+
+    @classmethod
+    def __setup__(cls):
+        super().__setup__()
+        cls.party.states['invisible'] = False
