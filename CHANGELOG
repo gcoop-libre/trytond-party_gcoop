@@ -1,3 +1,6 @@
+* Change attributes of the party_required field in accounts
+* Do not hide party field in move lines
+
 Version 6.0.0 - 2021-10-08
 * Bug fixes (see git logs for details)
 
